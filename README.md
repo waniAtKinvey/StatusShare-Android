@@ -13,22 +13,13 @@ In particular this sample application highlights the following key backend tasks
 ## Set up StatusShare Project
 
 1. Download the [StatusShare](https://github.com/KinveyApps/StatusShare-Android/archive/master.zip) project.
+2. Download [ActionBarSherlock](http://actionbarsherlock.com/) and in Eclipse, go `File` -> `New` -> `Android Project from Existing Source` and navigate to the ActionBarSherlock directory, and import it as a library project.
 2. In Eclipse, go to __File &rarr; Import…__
 3. Click __Android &rarr; Existing Android Code into Workspace__
 4. __Browse…__ to set __Root Directory__ to the extracted zip from step 1
-5. In the __Projects__ box, make sure the __HomeActivity__ project check box and the __library__ project from Action Bar Sherlock are selected. Then click __Finish__.
-6. Specify your app key and secret in `StatusShareApp` constant variables
-![key and secret]()
-
-
-```java
-public class StatusShareApp extends Application {
-
-	private static final String KINVEY_APP_KEY = "your_app_key";
-	private static final String KINVEY_APP_SECRET = "your_app_secret";
-	
-	...
-```
+5. In the __Projects__ box, make sure the __HomeActivity__ project check box ais selected. Then click __Finish__.
+6. Right click on the newly created project, and select __Properties__, then select __Android__ on the left.  At the bottom of the window, under the __Library__ section add `ActionBarSherlock` as a dependency. 
+7. Specify your app.key and app.secret in the property file located at `assets/kinvey.properties` 
 
 ##License
 
