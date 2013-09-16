@@ -14,7 +14,7 @@ In particular this sample application highlights the following key backend tasks
 
 1. Download the [StatusShare](https://github.com/KinveyApps/StatusShare-Android/archive/master.zip) project.
 2. Download [ActionBarSherlock](http://actionbarsherlock.com/) and in Eclipse, go `File` -> `New` -> `Android Project from Existing Source` and navigate to the ActionBarSherlock directory, and import it as a library project.
-3. [Download Kinvey's Android Library](http://devcenter.kinvey.com/android/downloads) and get your app-key and app-secret from the Kinvey console, by signing up and then creating a new app.\
+3. [Download Kinvey's Android Library](http://devcenter.kinvey.com/android/downloads) and get your app-key and app-secret from the Kinvey console, by signing up and then creating a new app.
 4. In Eclipse, go to __File &rarr; Import…__
 5. Click __Android &rarr; Existing Android Code into Workspace__
 6. __Browse…__ to set __Root Directory__ to the extracted zip from step 1
