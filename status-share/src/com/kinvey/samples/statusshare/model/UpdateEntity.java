@@ -13,27 +13,24 @@
  */
 package com.kinvey.samples.statusshare.model;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.util.Log;
-import com.google.api.client.json.GenericJson;
-import com.google.api.client.util.Key;
-
-import com.kinvey.android.Client;
-import com.kinvey.java.LinkedResources.LinkedGenericJson;
-import com.kinvey.java.User;
-import com.kinvey.java.model.KinveyMetaData;
-import com.kinvey.java.model.KinveyReference;
-import com.kinvey.samples.statusshare.StatusShare;
-
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Log;
+
+import com.google.api.client.util.Key;
+import com.kinvey.android.Client;
+import com.kinvey.java.User;
+import com.kinvey.java.LinkedResources.LinkedGenericJson;
+import com.kinvey.java.model.KinveyMetaData;
+import com.kinvey.java.model.KinveyReference;
+import com.kinvey.samples.statusshare.StatusShare;
 
 
 /**
@@ -138,14 +135,14 @@ public class UpdateEntity extends LinkedGenericJson{
 
 
     public String getAuthorID(){
-        if (this.author.getResolvedObject() != null){
+        if (this.author != null && this.author.getResolvedObject() != null){
             this.authorID = (String) (this.author.getResolvedObject()).get("_id");
         }
         return ((this.authorID == null) ? "" : this.authorID);
     }
 
     public String getAuthorName() {
-        if (this.author.getResolvedObject() != null){
+        if (this.author != null && this.author.getResolvedObject() != null){
             this.authorName = (String) (this.author.getResolvedObject()).get("username");
         }
         return ((this.authorName == null) ? "--" : this.authorName);
