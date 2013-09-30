@@ -152,6 +152,9 @@ public class UpdateEditFragment extends KinveyFragment implements View.OnClickLi
             Log.i(Client.TAG, "there is an attachment!");
             LinkedFile lf = new LinkedFile(filename);
             lf.addExtra("_public", true);
+            KinveyMetaData.AccessControlList acl = new KinveyMetaData.AccessControlList();
+            acl.setGloballyReadable(true);
+            lf.addExtra("_acl", acl);
             updateEntity.putFile("attachment", lf);
         }
         final ByteArrayInputStream bais = ((bytes == null) ? null : new ByteArrayInputStream(bytes));
