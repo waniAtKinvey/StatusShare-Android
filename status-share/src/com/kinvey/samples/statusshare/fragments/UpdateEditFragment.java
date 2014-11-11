@@ -22,12 +22,13 @@ import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
+
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
-
 import com.kinvey.android.Client;
 import com.kinvey.java.LinkedResources.LinkedFile;
 import com.kinvey.java.core.KinveyClientCallback;
+import com.kinvey.java.model.KinveyMetaData;
 import com.kinvey.samples.statusshare.R;
 import com.kinvey.samples.statusshare.StatusShare;
 import com.kinvey.samples.statusshare.model.UpdateEntity;
