@@ -13,7 +13,9 @@
  */
 package com.kinvey.samples.statusshare.fragments;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,6 +25,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
+import com.google.api.client.http.HttpTransport;
 import com.kinvey.android.Client;
 import com.kinvey.android.callback.KinveyListCallback;
 import com.kinvey.java.Query;
@@ -33,6 +36,7 @@ import com.kinvey.samples.statusshare.component.UpdateAdapter;
 import com.kinvey.samples.statusshare.model.UpdateEntity;
 
 import java.util.*;
+import java.util.logging.Logger;
 
 /**
  * Display a persistent list of shared status updates.
@@ -50,7 +54,7 @@ public class ShareListFragment extends KinveyFragment {
 
 
 
-    @Override
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB) @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
@@ -193,7 +197,7 @@ public class ShareListFragment extends KinveyFragment {
 
             case R.id.menu_sign_out:
                 getClient().user().logout().execute();
-                getSherlockActivity().finish();
+                ((StatusShare) getSherlockActivity()).replaceFragment(new LoginFragment(), true);
 
                 return true;
         }

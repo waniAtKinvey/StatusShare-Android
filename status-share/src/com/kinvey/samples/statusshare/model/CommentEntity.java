@@ -18,6 +18,7 @@ import android.util.Log;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.Key;
 import com.kinvey.android.Client;
+import com.kinvey.java.LinkedResources.LinkedGenericJson;
 import com.kinvey.java.model.KinveyMetaData;
 import com.kinvey.java.model.KinveyReference;
 import com.kinvey.samples.statusshare.StatusShare;
@@ -34,7 +35,7 @@ import java.util.Locale;
  * @author edwardf
  * @since 2.0
  */
-public class CommentEntity extends GenericJson {
+public class CommentEntity extends LinkedGenericJson {
 
 
 
@@ -48,6 +49,8 @@ public class CommentEntity extends GenericJson {
     private KinveyMetaData.AccessControlList acl;
     @Key("author")
     private String author;
+    @Key("updateId")
+    private String updateId;
 
 
     public CommentEntity(){
@@ -96,12 +99,21 @@ public class CommentEntity extends GenericJson {
         this.acl = acl;
     }
 
+    
     public String getAuthor() {
         return author;
     }
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    public String getUpdateId() {
+        return updateId;
+    }
+
+    public void setUpdateId(String updateId) {
+        this.updateId = updateId;
     }
 
 
